@@ -8,9 +8,9 @@
 MyGLWidget::MyGLWidget(QWidget *parent)
     : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
 {
-    xRot = 0;
-    yRot = 0;
-    zRot = 0;
+    xRotation = 0;
+    yRotation = 0;
+    zRotation = 0;
 }
 
 MyGLWidget::~MyGLWidget()
@@ -38,8 +38,8 @@ static void qNormalizeAngle(int &angle)
 void MyGLWidget::setXRotation(int angle)
 {
     qNormalizeAngle(angle);
-    if (angle != xRot) {
-        xRot = angle;
+    if (angle != xRotation) {
+        xRotation = angle;
         emit xRotationChanged(angle);
         updateGL();
     }
@@ -48,8 +48,8 @@ void MyGLWidget::setXRotation(int angle)
 void MyGLWidget::setYRotation(int angle)
 {
     qNormalizeAngle(angle);
-    if (angle != yRot) {
-        yRot = angle;
+    if (angle != yRotation) {
+        yRotation = angle;
         emit yRotationChanged(angle);
         updateGL();
     }
@@ -58,8 +58,8 @@ void MyGLWidget::setYRotation(int angle)
 void MyGLWidget::setZRotation(int angle)
 {
     qNormalizeAngle(angle);
-    if (angle != zRot) {
-        zRot = angle;
+    if (angle != zRotation) {
+        zRotation = angle;
         emit zRotationChanged(angle);
         updateGL();
     }
@@ -84,9 +84,9 @@ void MyGLWidget::paintGL()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     glTranslatef(0.0, 0.0, -10.0);
-    glRotatef(xRot / 16.0, 1.0, 0.0, 0.0);
-    glRotatef(yRot / 16.0, 0.0, 1.0, 0.0);
-    glRotatef(zRot / 16.0, 0.0, 0.0, 1.0);
+    glRotatef(xRotation / 16.0, 1.0, 0.0, 0.0);
+    glRotatef(yRotation / 16.0, 0.0, 1.0, 0.0);
+    glRotatef(zRotation / 16.0, 0.0, 0.0, 1.0);
     draw();
 }
 
@@ -116,11 +116,11 @@ void MyGLWidget::mouseMoveEvent(QMouseEvent *event)
     int dy = event->y() - lastPos.y();
 
     if (event->buttons() & Qt::LeftButton) {
-        setXRotation(xRot + 8 * dy);
-        setYRotation(yRot + 8 * dx);
+        setXRotation(xRotation + 8 * dy);
+        setYRotation(yRotation + 8 * dx);
     } else if (event->buttons() & Qt::RightButton) {
-        setXRotation(xRot + 8 * dy);
-        setZRotation(zRot + 8 * dx);
+        setXRotation(xRotation + 8 * dy);
+        setZRotation(zRotation + 8 * dx);
     }
 
     lastPos = event->pos();

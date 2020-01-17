@@ -40,9 +40,9 @@ signals:
 private:
     void draw();
 
-    int xRot;
-    int yRot;
-    int zRot;
+    int xRotation;
+    int yRotation;
+    int zRotation;
 
     QPoint lastPos;
 };

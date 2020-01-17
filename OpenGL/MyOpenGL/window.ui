@@ -34,7 +34,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QSlider" name="rotXSlider">
+      <widget class="QSlider" name="rotationXSlider">
        <property name="maximum">
         <number>360</number>
        </property>
@@ -67,7 +67,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QSlider" name="rotYSlider">
+      <widget class="QSlider" name="rotationYSlider">
        <property name="maximum">
         <number>360</number>
        </property>
@@ -100,7 +100,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QSlider" name="rotZSlider">
+      <widget class="QSlider" name="rotationZSlider">
        <property name="maximum">
         <number>360</number>
        </property>
@@ -142,7 +142,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>rotXSlider</sender>
+   <sender>rotationXSlider</sender>
    <signal>valueChanged(int)</signal>
    <receiver>myGLWidget</receiver>
    <slot>setXRotation(int)</slot>
@@ -158,7 +158,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>rotYSlider</sender>
+   <sender>rotationYSlider</sender>
    <signal>valueChanged(int)</signal>
    <receiver>myGLWidget</receiver>
    <slot>setYRotation(int)</slot>
@@ -174,7 +174,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>rotZSlider</sender>
+   <sender>rotationZSlider</sender>
    <signal>valueChanged(int)</signal>
    <receiver>myGLWidget</receiver>
    <slot>setZRotation(int)</slot>
