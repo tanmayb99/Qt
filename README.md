@@ -1,2 +1,3 @@
 # Qt
-contain projects developed using Qt
+
+Contain projects developed using Qt
