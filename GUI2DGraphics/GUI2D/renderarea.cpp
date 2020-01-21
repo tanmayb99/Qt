@@ -35,9 +35,15 @@ void RenderArea::on_shape_changed()
         break;
 
     case Cycloid:
+        mScale = 4;
+        mIntervalLength = 6 * M_PI;
+        mStepCount = 128;
         break;
 
-    case Hypocycloid:
+    case HypoCycloid:
+        mScale = 15;
+        mIntervalLength = 2 * M_PI;
+        mStepCount = 256;
         break;
 
     default:
@@ -45,14 +51,56 @@ void RenderArea::on_shape_changed()
     }
 }
 
+QPointF RenderArea::compute(float t)
+{
+    switch (mShape) {
+
+    case Astroid:
+        return compute_astroid(t);
+        break;
+
+    case Cycloid:
+        return compute_cycloid(t);
+        break;
+
+    case HypoCycloid:
+        return compute_hypoCycloid(t);
+        break;
+
+    default:
+        break;
+    }
+    return QPointF(0, 0);
+}
+
 QPointF RenderArea::compute_astroid(float t)
 {
-    // compute astroid function here
+    // compute astroid values
     float cos_t = cos (t);
     float sin_t = sin (t);
     float x = 2 * pow(cos_t, 3);
     float y = 2 * pow(sin_t, 3);
     return QPointF (x, y);
+}
+
+QPointF RenderArea::compute_cycloid(float t)
+{
+    // compute cycloid values
+    return QPointF
+            (
+                1.5 * (1 - cos (t)), //X
+                1.5 * (t - sin (t))  //Y
+            );
+}
+
+QPointF RenderArea::compute_hypoCycloid(float t)
+{
+    // compute hypoCycloid values
+    return QPointF
+            (
+                1.5 * (2 * cos (t) + cos (2 * t)), //X
+                1.5 * (2 * sin (t) - sin (2 * t))  //Y
+            );
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)
@@ -73,7 +121,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
     float intervalLength = 2 * M_PI;
     float step = mIntervalLength / mStepCount;
     for (float t = 0; t < intervalLength; t += step){
-        QPointF point = compute_astroid (t);
+        QPointF point = compute (t);
 
         QPoint pixel;
         pixel.setX(point.x() * mScale + center.x());
