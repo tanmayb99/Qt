@@ -43,5 +43,5 @@ void RenderArea::paintEvent(QPaintEvent *event)
 
     // drawing area
     painter.drawRect(this->rect());
-    painter.drawLine(this->rect().topLeft(), this->rect().bottomRight());
+//    painter.drawLine(this->rect().topLeft(), this->rect().bottomRight());
 }
