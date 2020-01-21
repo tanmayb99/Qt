@@ -6,98 +6,78 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>441</height>
+    <width>532</width>
+    <height>700</height>
    </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" rowspan="2">
+    <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="RenderArea" name="renderArea" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
+       <widget class="RenderArea" name="renderArea" native="true"/>
       </item>
       <item>
-       <widget class="QPushButton" name="buttonBackground">
-        <property name="text">
-         <string>Background</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="buttonLineColor">
-        <property name="text">
-         <string>Line color</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QPushButton" name="buttonBackground">
+          <property name="text">
+           <string>Background</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonLineColor">
+          <property name="text">
+           <string>Line Color</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>98</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
-    <item row="0" column="1" rowspan="2" colspan="2">
+    <item row="0" column="1">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QPushButton" name="buttonAst">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
+       <widget class="QPushButton" name="buttonAstroid">
         <property name="text">
          <string>Astroid</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="buttonHyCyc">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
+       <widget class="QPushButton" name="buttonCycloid">
         <property name="text">
          <string>Cycloid</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="buttonCyc">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <widget class="QPushButton" name="buttonHuygens">
+        <property name="text">
+         <string>Huygens</string>
         </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonHypo">
         <property name="text">
          <string>Hypo Cycloid</string>
         </property>
@@ -111,9 +91,51 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="buttonCircle">
+        <property name="text">
+         <string>Circle</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonEllipse">
+        <property name="text">
+         <string>Ellipse</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonFancy">
+        <property name="text">
+         <string>Fancy</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonStarfish">
+        <property name="text">
+         <string>Starfish</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonCloud">
+        <property name="text">
+         <string>Cloud 1</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonCloud2">
+        <property name="text">
+         <string>Cloud 2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QLabel" name="labelScale">
+         <widget class="QLabel" name="label">
           <property name="text">
            <string>Scale:</string>
           </property>
@@ -133,6 +155,9 @@
           <property name="decimals">
            <number>1</number>
           </property>
+          <property name="maximum">
+           <double>200.000000000000000</double>
+          </property>
           <property name="singleStep">
            <double>0.100000000000000</double>
           </property>
@@ -143,7 +168,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QLabel" name="labelInterval">
+         <widget class="QLabel" name="label_2">
           <property name="text">
            <string>Interval Length:</string>
           </property>
@@ -173,7 +198,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="label_3">
           <property name="text">
            <string>Step Count:</string>
           </property>
@@ -194,26 +219,13 @@
            <number>512</number>
           </property>
           <property name="singleStep">
-           <number>8</number>
+           <number>1</number>
           </property>
          </widget>
         </item>
        </layout>
       </item>
      </layout>
-    </item>
-    <item row="1" column="2">
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>372</height>
-       </size>
-      </property>
-     </spacer>
     </item>
    </layout>
   </widget>

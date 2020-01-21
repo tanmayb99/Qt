@@ -36,36 +36,38 @@ public:
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout_2;
     RenderArea *renderArea;
+    QHBoxLayout *horizontalLayout_4;
     QPushButton *buttonBackground;
     QPushButton *buttonLineColor;
     QSpacerItem *horizontalSpacer;
     QVBoxLayout *verticalLayout;
-    QPushButton *buttonAst;
-    QPushButton *buttonHyCyc;
-    QPushButton *buttonCyc;
+    QPushButton *buttonAstroid;
+    QPushButton *buttonCycloid;
+    QPushButton *buttonHuygens;
+    QPushButton *buttonHypo;
     QPushButton *buttonLine;
+    QPushButton *buttonCircle;
+    QPushButton *buttonEllipse;
+    QPushButton *buttonFancy;
+    QPushButton *buttonStarfish;
+    QPushButton *buttonCloud;
+    QPushButton *buttonCloud2;
     QHBoxLayout *horizontalLayout;
-    QLabel *labelScale;
+    QLabel *label;
     QDoubleSpinBox *spinScale;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *labelInterval;
+    QLabel *label_2;
     QDoubleSpinBox *spinInterval;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *label;
+    QLabel *label_3;
     QSpinBox *spinCount;
-    QSpacerItem *verticalSpacer;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(554, 441);
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
-        MainWindow->setSizePolicy(sizePolicy);
+        MainWindow->resize(532, 700);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -77,70 +79,104 @@ public:
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         renderArea = new RenderArea(centralWidget);
         renderArea->setObjectName(QStringLiteral("renderArea"));
-        sizePolicy.setHeightForWidth(renderArea->sizePolicy().hasHeightForWidth());
-        renderArea->setSizePolicy(sizePolicy);
 
         verticalLayout_2->addWidget(renderArea);
 
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         buttonBackground = new QPushButton(centralWidget);
         buttonBackground->setObjectName(QStringLiteral("buttonBackground"));
 
-        verticalLayout_2->addWidget(buttonBackground);
+        horizontalLayout_4->addWidget(buttonBackground);
 
         buttonLineColor = new QPushButton(centralWidget);
         buttonLineColor->setObjectName(QStringLiteral("buttonLineColor"));
 
-        verticalLayout_2->addWidget(buttonLineColor);
+        horizontalLayout_4->addWidget(buttonLineColor);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(98, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout_2->addItem(horizontalSpacer);
+        horizontalLayout_4->addItem(horizontalSpacer);
 
 
-        gridLayout->addLayout(verticalLayout_2, 0, 0, 2, 1);
+        verticalLayout_2->addLayout(horizontalLayout_4);
+
+
+        gridLayout->addLayout(verticalLayout_2, 0, 0, 1, 1);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        buttonAst = new QPushButton(centralWidget);
-        buttonAst->setObjectName(QStringLiteral("buttonAst"));
-        sizePolicy.setHeightForWidth(buttonAst->sizePolicy().hasHeightForWidth());
-        buttonAst->setSizePolicy(sizePolicy);
+        buttonAstroid = new QPushButton(centralWidget);
+        buttonAstroid->setObjectName(QStringLiteral("buttonAstroid"));
 
-        verticalLayout->addWidget(buttonAst);
+        verticalLayout->addWidget(buttonAstroid);
 
-        buttonHyCyc = new QPushButton(centralWidget);
-        buttonHyCyc->setObjectName(QStringLiteral("buttonHyCyc"));
-        sizePolicy.setHeightForWidth(buttonHyCyc->sizePolicy().hasHeightForWidth());
-        buttonHyCyc->setSizePolicy(sizePolicy);
+        buttonCycloid = new QPushButton(centralWidget);
+        buttonCycloid->setObjectName(QStringLiteral("buttonCycloid"));
 
-        verticalLayout->addWidget(buttonHyCyc);
+        verticalLayout->addWidget(buttonCycloid);
 
-        buttonCyc = new QPushButton(centralWidget);
-        buttonCyc->setObjectName(QStringLiteral("buttonCyc"));
-        sizePolicy.setHeightForWidth(buttonCyc->sizePolicy().hasHeightForWidth());
-        buttonCyc->setSizePolicy(sizePolicy);
+        buttonHuygens = new QPushButton(centralWidget);
+        buttonHuygens->setObjectName(QStringLiteral("buttonHuygens"));
 
-        verticalLayout->addWidget(buttonCyc);
+        verticalLayout->addWidget(buttonHuygens);
+
+        buttonHypo = new QPushButton(centralWidget);
+        buttonHypo->setObjectName(QStringLiteral("buttonHypo"));
+
+        verticalLayout->addWidget(buttonHypo);
 
         buttonLine = new QPushButton(centralWidget);
         buttonLine->setObjectName(QStringLiteral("buttonLine"));
 
         verticalLayout->addWidget(buttonLine);
 
+        buttonCircle = new QPushButton(centralWidget);
+        buttonCircle->setObjectName(QStringLiteral("buttonCircle"));
+
+        verticalLayout->addWidget(buttonCircle);
+
+        buttonEllipse = new QPushButton(centralWidget);
+        buttonEllipse->setObjectName(QStringLiteral("buttonEllipse"));
+
+        verticalLayout->addWidget(buttonEllipse);
+
+        buttonFancy = new QPushButton(centralWidget);
+        buttonFancy->setObjectName(QStringLiteral("buttonFancy"));
+
+        verticalLayout->addWidget(buttonFancy);
+
+        buttonStarfish = new QPushButton(centralWidget);
+        buttonStarfish->setObjectName(QStringLiteral("buttonStarfish"));
+
+        verticalLayout->addWidget(buttonStarfish);
+
+        buttonCloud = new QPushButton(centralWidget);
+        buttonCloud->setObjectName(QStringLiteral("buttonCloud"));
+
+        verticalLayout->addWidget(buttonCloud);
+
+        buttonCloud2 = new QPushButton(centralWidget);
+        buttonCloud2->setObjectName(QStringLiteral("buttonCloud2"));
+
+        verticalLayout->addWidget(buttonCloud2);
+
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        labelScale = new QLabel(centralWidget);
-        labelScale->setObjectName(QStringLiteral("labelScale"));
-        labelScale->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout->addWidget(labelScale);
+        horizontalLayout->addWidget(label);
 
         spinScale = new QDoubleSpinBox(centralWidget);
         spinScale->setObjectName(QStringLiteral("spinScale"));
         spinScale->setMaximumSize(QSize(60, 16777215));
         spinScale->setDecimals(1);
+        spinScale->setMaximum(200);
         spinScale->setSingleStep(0.1);
 
         horizontalLayout->addWidget(spinScale);
@@ -151,11 +187,11 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        labelInterval = new QLabel(centralWidget);
-        labelInterval->setObjectName(QStringLiteral("labelInterval"));
-        labelInterval->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_2->addWidget(labelInterval);
+        horizontalLayout_2->addWidget(label_2);
 
         spinInterval = new QDoubleSpinBox(centralWidget);
         spinInterval->setObjectName(QStringLiteral("spinInterval"));
@@ -171,17 +207,17 @@ public:
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_3->addWidget(label);
+        horizontalLayout_3->addWidget(label_3);
 
         spinCount = new QSpinBox(centralWidget);
         spinCount->setObjectName(QStringLiteral("spinCount"));
         spinCount->setMaximumSize(QSize(60, 16777215));
         spinCount->setMaximum(512);
-        spinCount->setSingleStep(8);
+        spinCount->setSingleStep(1);
 
         horizontalLayout_3->addWidget(spinCount);
 
@@ -189,11 +225,7 @@ public:
         verticalLayout->addLayout(horizontalLayout_3);
 
 
-        gridLayout->addLayout(verticalLayout, 0, 1, 2, 2);
-
-        verticalSpacer = new QSpacerItem(20, 372, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 1, 2, 1, 1);
+        gridLayout->addLayout(verticalLayout, 0, 1, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
@@ -209,14 +241,21 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         buttonBackground->setText(QApplication::translate("MainWindow", "Background", Q_NULLPTR));
-        buttonLineColor->setText(QApplication::translate("MainWindow", "Line color", Q_NULLPTR));
-        buttonAst->setText(QApplication::translate("MainWindow", "Astroid", Q_NULLPTR));
-        buttonHyCyc->setText(QApplication::translate("MainWindow", "Cycloid", Q_NULLPTR));
-        buttonCyc->setText(QApplication::translate("MainWindow", "Hypo Cycloid", Q_NULLPTR));
+        buttonLineColor->setText(QApplication::translate("MainWindow", "Line Color", Q_NULLPTR));
+        buttonAstroid->setText(QApplication::translate("MainWindow", "Astroid", Q_NULLPTR));
+        buttonCycloid->setText(QApplication::translate("MainWindow", "Cycloid", Q_NULLPTR));
+        buttonHuygens->setText(QApplication::translate("MainWindow", "Huygens", Q_NULLPTR));
+        buttonHypo->setText(QApplication::translate("MainWindow", "Hypo Cycloid", Q_NULLPTR));
         buttonLine->setText(QApplication::translate("MainWindow", "Line", Q_NULLPTR));
-        labelScale->setText(QApplication::translate("MainWindow", "Scale:", Q_NULLPTR));
-        labelInterval->setText(QApplication::translate("MainWindow", "Interval Length:", Q_NULLPTR));
-        label->setText(QApplication::translate("MainWindow", "Step Count:", Q_NULLPTR));
+        buttonCircle->setText(QApplication::translate("MainWindow", "Circle", Q_NULLPTR));
+        buttonEllipse->setText(QApplication::translate("MainWindow", "Ellipse", Q_NULLPTR));
+        buttonFancy->setText(QApplication::translate("MainWindow", "Fancy", Q_NULLPTR));
+        buttonStarfish->setText(QApplication::translate("MainWindow", "Starfish", Q_NULLPTR));
+        buttonCloud->setText(QApplication::translate("MainWindow", "Cloud 1", Q_NULLPTR));
+        buttonCloud2->setText(QApplication::translate("MainWindow", "Cloud 2", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "Scale:", Q_NULLPTR));
+        label_2->setText(QApplication::translate("MainWindow", "Interval Length:", Q_NULLPTR));
+        label_3->setText(QApplication::translate("MainWindow", "Step Count:", Q_NULLPTR));
     } // retranslateUi
 
 };

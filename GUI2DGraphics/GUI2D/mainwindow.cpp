@@ -24,7 +24,7 @@ void MainWindow::update_ui()
     this->ui->spinCount->setValue(this->ui->renderArea->stepCount());
 }
 
-void MainWindow::on_buttonAst_clicked()
+void MainWindow::on_buttonAstroid_clicked()
 {
     // change background color for render area
     // by adding a function to change the background color
@@ -54,6 +54,56 @@ void MainWindow::on_buttonLine_clicked()
     update_ui();
 }
 
+void MainWindow::on_buttonHuygens_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::HuygensCycloid);
+    this->ui->renderArea->repaint();
+    update_ui ();
+}
+
+
+void MainWindow::on_buttonCircle_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Circle);
+    this->ui->renderArea->repaint();
+    update_ui ();
+}
+
+void MainWindow::on_buttonEllipse_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Ellipse);
+    this->ui->renderArea->repaint();
+    update_ui ();
+}
+
+void MainWindow::on_buttonFancy_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Fancy);
+    this->ui->renderArea->repaint();
+    update_ui ();
+}
+
+void MainWindow::on_buttonStarfish_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Starfish);
+    this->ui->renderArea->repaint();
+    update_ui ();
+}
+
+void MainWindow::on_buttonCloud_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Cloud1);
+    this->ui->renderArea->repaint();
+    update_ui ();
+}
+
+void MainWindow::on_buttonCloud2_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Cloud2);
+    this->ui->renderArea->repaint();
+    update_ui ();
+}
+
 void MainWindow::on_spinScale_valueChanged(double scale)
 {
     this->ui->renderArea->setScale (scale);
@@ -80,3 +130,4 @@ void MainWindow::on_buttonLineColor_clicked()
     QColor color = QColorDialog::getColor(ui->renderArea->shapeColor(), this, "Select color");
     ui->renderArea->setShapeColor(color);
 }
+
