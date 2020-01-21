@@ -14,12 +14,16 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDoubleSpinBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "renderarea.h"
 
@@ -29,26 +33,34 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
+    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_2;
     RenderArea *renderArea;
+    QPushButton *buttonBackground;
+    QPushButton *buttonLineColor;
+    QSpacerItem *horizontalSpacer;
+    QVBoxLayout *verticalLayout;
     QPushButton *buttonAst;
-    QPushButton *buttonCyc;
     QPushButton *buttonHyCyc;
+    QPushButton *buttonCyc;
     QPushButton *buttonLine;
-    QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QLabel *labelScale;
     QDoubleSpinBox *spinScale;
-    QWidget *widget1;
     QHBoxLayout *horizontalLayout_2;
     QLabel *labelInterval;
     QDoubleSpinBox *spinInterval;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label;
+    QSpinBox *spinCount;
+    QSpacerItem *verticalSpacer;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(554, 396);
+        MainWindow->resize(554, 441);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -56,68 +68,132 @@ public:
         MainWindow->setSizePolicy(sizePolicy);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        gridLayout = new QGridLayout(centralWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         renderArea = new RenderArea(centralWidget);
         renderArea->setObjectName(QStringLiteral("renderArea"));
-        renderArea->setGeometry(QRect(10, 10, 271, 291));
         sizePolicy.setHeightForWidth(renderArea->sizePolicy().hasHeightForWidth());
         renderArea->setSizePolicy(sizePolicy);
+
+        verticalLayout_2->addWidget(renderArea);
+
+        buttonBackground = new QPushButton(centralWidget);
+        buttonBackground->setObjectName(QStringLiteral("buttonBackground"));
+
+        verticalLayout_2->addWidget(buttonBackground);
+
+        buttonLineColor = new QPushButton(centralWidget);
+        buttonLineColor->setObjectName(QStringLiteral("buttonLineColor"));
+
+        verticalLayout_2->addWidget(buttonLineColor);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        verticalLayout_2->addItem(horizontalSpacer);
+
+
+        gridLayout->addLayout(verticalLayout_2, 0, 0, 2, 1);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(6);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         buttonAst = new QPushButton(centralWidget);
         buttonAst->setObjectName(QStringLiteral("buttonAst"));
-        buttonAst->setGeometry(QRect(381, 1, 85, 37));
         sizePolicy.setHeightForWidth(buttonAst->sizePolicy().hasHeightForWidth());
         buttonAst->setSizePolicy(sizePolicy);
-        buttonCyc = new QPushButton(centralWidget);
-        buttonCyc->setObjectName(QStringLiteral("buttonCyc"));
-        buttonCyc->setGeometry(QRect(381, 93, 141, 37));
-        sizePolicy.setHeightForWidth(buttonCyc->sizePolicy().hasHeightForWidth());
-        buttonCyc->setSizePolicy(sizePolicy);
+
+        verticalLayout->addWidget(buttonAst);
+
         buttonHyCyc = new QPushButton(centralWidget);
         buttonHyCyc->setObjectName(QStringLiteral("buttonHyCyc"));
-        buttonHyCyc->setGeometry(QRect(381, 47, 83, 37));
         sizePolicy.setHeightForWidth(buttonHyCyc->sizePolicy().hasHeightForWidth());
         buttonHyCyc->setSizePolicy(sizePolicy);
+
+        verticalLayout->addWidget(buttonHyCyc);
+
+        buttonCyc = new QPushButton(centralWidget);
+        buttonCyc->setObjectName(QStringLiteral("buttonCyc"));
+        sizePolicy.setHeightForWidth(buttonCyc->sizePolicy().hasHeightForWidth());
+        buttonCyc->setSizePolicy(sizePolicy);
+
+        verticalLayout->addWidget(buttonCyc);
+
         buttonLine = new QPushButton(centralWidget);
         buttonLine->setObjectName(QStringLiteral("buttonLine"));
-        buttonLine->setGeometry(QRect(381, 139, 80, 37));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(340, 250, 159, 39));
-        horizontalLayout = new QHBoxLayout(widget);
+
+        verticalLayout->addWidget(buttonLine);
+
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        labelScale = new QLabel(widget);
+        labelScale = new QLabel(centralWidget);
         labelScale->setObjectName(QStringLiteral("labelScale"));
+        labelScale->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(labelScale);
 
-        spinScale = new QDoubleSpinBox(widget);
+        spinScale = new QDoubleSpinBox(centralWidget);
         spinScale->setObjectName(QStringLiteral("spinScale"));
+        spinScale->setMaximumSize(QSize(60, 16777215));
         spinScale->setDecimals(1);
         spinScale->setSingleStep(0.1);
 
         horizontalLayout->addWidget(spinScale);
 
-        widget1 = new QWidget(centralWidget);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(247, 290, 272, 39));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        labelInterval = new QLabel(widget1);
+        labelInterval = new QLabel(centralWidget);
         labelInterval->setObjectName(QStringLiteral("labelInterval"));
+        labelInterval->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_2->addWidget(labelInterval);
 
-        spinInterval = new QDoubleSpinBox(widget1);
+        spinInterval = new QDoubleSpinBox(centralWidget);
         spinInterval->setObjectName(QStringLiteral("spinInterval"));
+        spinInterval->setMaximumSize(QSize(60, 16777215));
         spinInterval->setMaximum(100);
         spinInterval->setSingleStep(0.1);
 
         horizontalLayout_2->addWidget(spinInterval);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_3->addWidget(label);
+
+        spinCount = new QSpinBox(centralWidget);
+        spinCount->setObjectName(QStringLiteral("spinCount"));
+        spinCount->setMaximumSize(QSize(60, 16777215));
+        spinCount->setMaximum(512);
+        spinCount->setSingleStep(8);
+
+        horizontalLayout_3->addWidget(spinCount);
+
+
+        verticalLayout->addLayout(horizontalLayout_3);
+
+
+        gridLayout->addLayout(verticalLayout, 0, 1, 2, 2);
+
+        verticalSpacer = new QSpacerItem(20, 372, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 1, 2, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
@@ -132,12 +208,15 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        buttonBackground->setText(QApplication::translate("MainWindow", "Background", Q_NULLPTR));
+        buttonLineColor->setText(QApplication::translate("MainWindow", "Line color", Q_NULLPTR));
         buttonAst->setText(QApplication::translate("MainWindow", "Astroid", Q_NULLPTR));
-        buttonCyc->setText(QApplication::translate("MainWindow", "Hypo Cycloid", Q_NULLPTR));
         buttonHyCyc->setText(QApplication::translate("MainWindow", "Cycloid", Q_NULLPTR));
+        buttonCyc->setText(QApplication::translate("MainWindow", "Hypo Cycloid", Q_NULLPTR));
         buttonLine->setText(QApplication::translate("MainWindow", "Line", Q_NULLPTR));
         labelScale->setText(QApplication::translate("MainWindow", "Scale:", Q_NULLPTR));
         labelInterval->setText(QApplication::translate("MainWindow", "Interval Length:", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "Step Count:", Q_NULLPTR));
     } // retranslateUi
 
 };
