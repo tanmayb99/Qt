@@ -35,3 +35,10 @@ void MainWindow::on_buttonCyc_clicked()
     this->ui->renderArea->setBackgroundColor(Qt::blue);
     this->ui->renderArea->repaint();
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Line);
+    this->ui->renderArea->setBackgroundColor(Qt::blue);
+    this->ui->renderArea->repaint();
+}
