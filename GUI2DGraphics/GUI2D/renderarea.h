@@ -18,11 +18,11 @@ public:
     void setBackgroundColor (QColor color) {mBackgroundColor = color; } // setter
     QColor backgroundColor () const {return mBackgroundColor;} // getter
 
-    void setShape (ShapeType shape) { mShape = shape; }
+    void setShape (ShapeType shape) { mShape = shape; on_shape_changed();}
+    ShapeType shape () const { return mShape;}
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
-    ShapeType shape () const { return mShape;}
 
 signals:
 
@@ -32,6 +32,11 @@ private:
     QColor mBackgroundColor;
     QColor mShapeColor;
     ShapeType mShape;
+    QPointF compute_astroid (float t);
+    float mIntervalLength;
+    float mScale;
+    int mStepCount;
+    void on_shape_changed();
 };
 
 #endif // RENDERAREA_H
