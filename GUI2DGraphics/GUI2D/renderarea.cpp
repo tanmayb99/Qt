@@ -136,10 +136,16 @@ void RenderArea::paintEvent(QPaintEvent *event)
 //    painter.drawLine(this->rect().topLeft(), this->rect().bottomRight());
 
     QPoint center = this->rect().center();
+    QPointF prevPoint = compute(0);
+    QPoint prevPixel;
+    prevPixel.setX(prevPoint.x() * mScale + center.x());
+    prevPixel.setY(prevPoint.y() * mScale + center.y());
+
     int mStepCount = 256;
     float mScale = 40;
     float intervalLength = 2 * M_PI;
     float step = mIntervalLength / mStepCount;
+
     for (float t = 0; t < intervalLength; t += step){
         QPointF point = compute (t);
 
@@ -147,6 +153,8 @@ void RenderArea::paintEvent(QPaintEvent *event)
         pixel.setX(point.x() * mScale + center.x());
         pixel.setY(point.y() * mScale + center.y());
 
-        painter.drawPoint(pixel);
+//        painter.drawPoint(pixel);
+        painter.drawLine(pixel, prevPixel);
+        prevPixel = pixel;
     }
 }
