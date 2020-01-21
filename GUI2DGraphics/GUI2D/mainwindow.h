@@ -22,10 +22,13 @@ private slots:
 
     void on_buttonCyc_clicked();
 
-    void on_pushButton_clicked();
+    void on_buttonLine_clicked();
+
+    void on_spinScale_valueChanged(double arg1);
 
 private:
     Ui::MainWindow *ui;
+    void update_ui();
 };
 
 #endif // MAINWINDOW_H
