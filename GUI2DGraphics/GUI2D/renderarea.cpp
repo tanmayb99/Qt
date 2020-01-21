@@ -20,10 +20,26 @@ QSize RenderArea::sizeHint() const
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
+    Q_UNUSED(event);
     QPainter painter(this);
     painter.setBrush(mBackgroundColor);
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setPen(mShapeColor);
+
+    switch (mShape) {
+
+    case Astroid:
+        break;
+
+    case Cycloid:
+        break;
+
+    case Hypocycloid:
+        break;
+
+    default:
+        break;
+    }
 
     // drawing area
     painter.drawRect(this->rect());
