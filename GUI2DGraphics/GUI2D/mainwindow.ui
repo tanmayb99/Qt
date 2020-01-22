@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="RenderArea" name="renderArea" native="true"/>
+       <widget class="RenderArea" name="renderingArea" native="true"/>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -56,79 +56,79 @@
     <item row="0" column="1">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
+       <widget class="QPushButton" name="buttonLine">
+        <property name="text">
+         <string>Line Shape</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="buttonAstroid">
         <property name="text">
-         <string>Astroid</string>
+         <string>Astroid Shape</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="buttonCycloid">
         <property name="text">
-         <string>Cycloid</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="buttonHuygens">
-        <property name="text">
-         <string>Huygens</string>
+         <string>Cycloid Shape</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="buttonHypo">
         <property name="text">
-         <string>Hypo Cycloid</string>
+         <string>Hypo Cycloid Shape</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="buttonLine">
+       <widget class="QPushButton" name="buttonHuygens">
         <property name="text">
-         <string>Line</string>
+         <string>Huygens Shape</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="buttonCircle">
         <property name="text">
-         <string>Circle</string>
+         <string>Circle Shape</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="buttonEllipse">
         <property name="text">
-         <string>Ellipse</string>
+         <string>Ellipse Shape</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="buttonFancy">
         <property name="text">
-         <string>Fancy</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="buttonStarfish">
-        <property name="text">
-         <string>Starfish</string>
+         <string>Random Shape</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="buttonCloud">
         <property name="text">
-         <string>Cloud A</string>
+         <string>Cloud A Shape</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="buttonCloud2">
         <property name="text">
-         <string>Cloud B</string>
+         <string>Cloud B Shape</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonStarfish">
+        <property name="text">
+         <string>Starfish Shape</string>
         </property>
        </widget>
       </item>
@@ -145,12 +145,15 @@
          </widget>
         </item>
         <item>
-         <widget class="QDoubleSpinBox" name="spinScale">
+         <widget class="QDoubleSpinBox" name="spinboxScale">
           <property name="maximumSize">
            <size>
-            <width>60</width>
+            <width>76</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
           <property name="decimals">
            <number>1</number>
@@ -178,12 +181,15 @@
          </widget>
         </item>
         <item>
-         <widget class="QDoubleSpinBox" name="spinInterval">
+         <widget class="QDoubleSpinBox" name="spinboxInterval">
           <property name="maximumSize">
            <size>
-            <width>60</width>
+            <width>76</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
           <property name="maximum">
            <double>100.000000000000000</double>
@@ -208,12 +214,15 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinCount">
+         <widget class="QSpinBox" name="spinboxCount">
           <property name="maximumSize">
            <size>
-            <width>60</width>
+            <width>76</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
           <property name="maximum">
            <number>512</number>

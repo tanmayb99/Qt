@@ -6,12 +6,12 @@
 
 RenderArea::RenderArea(QWidget *parent) :
     QWidget(parent),
-    mBackgroundColor (0, 255 , 0), // green
+    m_BackgroundColor (0, 255 , 0), // green
 //    mShapeColor (255, 255, 255), // white
-    mPen (Qt::white),
-    mShape (Astroid)
+    m_Pen (Qt::white),
+    m_Shape (Astroid)
 {
-    mPen.setWidth(2);
+    m_Pen.setWidth(2);
     on_shape_changed();
 }
 
@@ -27,73 +27,73 @@ QSize RenderArea::sizeHint() const
 
 void RenderArea::on_shape_changed()
 {
-    switch (mShape) {
+    switch (m_Shape) {
 
     case Astroid:
-        // load Astroid values
-        mScale = 40;
-        mIntervalLength = 2 * M_PI;
-        mStepCount = 256;
+        // loading Astroid values
+        m_Scale = 40;
+        m_IntervalLength = 2 * M_PI;
+        m_StepCount = 256;
         break;
 
     case Cycloid:
-        mScale = 4;
-        mIntervalLength = 6 * M_PI;
-        mStepCount = 128;
+        m_Scale = 4;
+        m_IntervalLength = 6 * M_PI;
+        m_StepCount = 128;
         break;
 
     case HypoCycloid:
-        mScale = 15;
-        mIntervalLength = 2 * M_PI;
-        mStepCount = 256;
+        m_Scale = 15;
+        m_IntervalLength = 2 * M_PI;
+        m_StepCount = 256;
         break;
 
     case Line:
-        mScale = 100;
-        mIntervalLength = 1;
-        mStepCount = 128;
+        m_Scale = 100;
+        m_IntervalLength = 1;
+        m_StepCount = 128;
         break;
 
     case HuygensCycloid:
-        mScale = 12;
-        mIntervalLength = 4 * M_PI;
-        mStepCount = 256;
+        m_Scale = 12;
+        m_IntervalLength = 4 * M_PI;
+        m_StepCount = 256;
         break;
 
     case Circle:
-        mScale = 165;
-        mIntervalLength = 2 * M_PI;
-        mStepCount = 128;
+        m_Scale = 165;
+        m_IntervalLength = 2 * M_PI;
+        m_StepCount = 128;
         break;
 
     case Ellipse:
-        mScale = 75;
-        mIntervalLength = 2 * M_PI;
-        mStepCount = 128;
+        m_Scale = 75;
+        m_IntervalLength = 2 * M_PI;
+        m_StepCount = 128;
         break;
 
     case Fancy:
-        mScale = 10;
-        mIntervalLength = 12 * M_PI;
-        mStepCount = 512;
+        m_Scale = 10;
+        m_IntervalLength = 12 * M_PI;
+        m_StepCount = 512;
         break;
 
     case Starfish:
-        mScale = 25;
-        mIntervalLength = 6 * M_PI;
-        mStepCount = 256;
+        m_Scale = 25;
+        m_IntervalLength = 6 * M_PI;
+        m_StepCount = 256;
         break;
 
     case CloudA:
-        mScale = 10;
-        mIntervalLength = 28 * M_PI;
-        mStepCount = 128;
+        m_Scale = 10;
+        m_IntervalLength = 28 * M_PI;
+        m_StepCount = 128;
         break;
 
     case CloudB:
-        mScale = 10;
-        mIntervalLength = 28 * M_PI;
-        mStepCount = 128;
+        m_Scale = 10;
+        m_IntervalLength = 28 * M_PI;
+        m_StepCount = 128;
         break;
 
     default:
@@ -103,7 +103,7 @@ void RenderArea::on_shape_changed()
 
 QPointF RenderArea::compute(float t)
 {
-    switch (mShape) {
+    switch (m_Shape) {
 
     case Astroid:
         return computing_astroid(t);
@@ -134,7 +134,7 @@ QPointF RenderArea::compute(float t)
         break;
 
     case Fancy:
-        return computing_fancy(t);
+        return computing_random(t);
         break;
 
     case Starfish:
@@ -221,13 +221,13 @@ QPointF RenderArea::computing_ellipse(float t)
     );
 }
 
-QPointF RenderArea::computing_fancy(float t)
+QPointF RenderArea::computing_random(float t)
 {
-    float v1 = 15;
-    float v2 = 4;
+    float a = 16;
+    float b = 5;
 
-    float x = v1 * cos (t) - v2 * cos (v1 / v2 * t);
-    float y = v1 * sin (t) - v2 * sin (v1 / v2 * t);
+    float x = a * cos (t) + b * cos (2 * a / b * t);
+    float y = a * sin (t) - b * sin (a / b * 2 * t);
 
     return QPointF (x, y);
 }
@@ -270,9 +270,9 @@ void RenderArea::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
-    painter.setBrush(mBackgroundColor);
+    painter.setBrush(m_BackgroundColor);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setPen(mPen);
+    painter.setPen(m_Pen);
 
     // drawing area
     painter.drawRect(this->rect());
@@ -281,26 +281,26 @@ void RenderArea::paintEvent(QPaintEvent *event)
     QPoint center = this->rect().center();
     QPointF prevPoint = compute(0);
     QPoint prevPixel;
-    prevPixel.setX(prevPoint.x() * mScale + center.x());
-    prevPixel.setY(prevPoint.y() * mScale + center.y());
+    prevPixel.setX(prevPoint.x() * m_Scale + center.x());
+    prevPixel.setY(prevPoint.y() * m_Scale + center.y());
 
-    float step = mIntervalLength / mStepCount;
+    float step = m_IntervalLength / m_StepCount;
 
-    for (float t = 0; t < mIntervalLength; t += step){
+    for (float t = 0; t < m_IntervalLength; t += step){
         QPointF point = compute (t);
 
         QPoint pixel;
-        pixel.setX(point.x() * mScale + center.x());
-        pixel.setY(point.y() * mScale + center.y());
+        pixel.setX(point.x() * m_Scale + center.x());
+        pixel.setY(point.y() * m_Scale + center.y());
 
 //        painter.drawPoint(pixel);
         painter.drawLine(pixel, prevPixel);
         prevPixel = pixel;
     }
 
-    QPointF point = compute (mIntervalLength);
+    QPointF point = compute (m_IntervalLength);
     QPoint pixel;
-    pixel.setX(point.x() * mScale + center.x());
-    pixel.setY(point.y() * mScale + center.y());
+    pixel.setX(point.x() * m_Scale + center.x());
+    pixel.setY(point.y() * m_Scale + center.y());
     painter.drawLine(pixel, prevPixel);
 }

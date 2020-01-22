@@ -19,11 +19,7 @@ private slots:
 
     void on_buttonAstroid_clicked();
 
-    void on_buttonCyc_clicked();
-
     void on_buttonHuygens_clicked();
-
-    void on_buttonHyCyc_clicked();
 
     void on_buttonLine_clicked();
 
@@ -48,6 +44,10 @@ private slots:
     void on_buttonCloud_clicked();
 
     void on_buttonCloud2_clicked();
+
+    void on_buttonCycloid_clicked();
+
+    void on_buttonHypo_clicked();
 
 private:
     void update_ui ();

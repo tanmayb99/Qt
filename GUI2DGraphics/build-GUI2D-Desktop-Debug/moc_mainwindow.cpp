@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[19];
-    char stringdata0[414];
+    char stringdata0[417];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,36 +34,36 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 24), // "on_buttonAstroid_clicked"
 QT_MOC_LITERAL(2, 36, 0), // ""
-QT_MOC_LITERAL(3, 37, 20), // "on_buttonCyc_clicked"
-QT_MOC_LITERAL(4, 58, 24), // "on_buttonHuygens_clicked"
-QT_MOC_LITERAL(5, 83, 22), // "on_buttonHyCyc_clicked"
-QT_MOC_LITERAL(6, 106, 21), // "on_buttonLine_clicked"
-QT_MOC_LITERAL(7, 128, 25), // "on_spinScale_valueChanged"
-QT_MOC_LITERAL(8, 154, 4), // "arg1"
-QT_MOC_LITERAL(9, 159, 28), // "on_spinInterval_valueChanged"
-QT_MOC_LITERAL(10, 188, 25), // "on_spinCount_valueChanged"
-QT_MOC_LITERAL(11, 214, 27), // "on_buttonBackground_clicked"
-QT_MOC_LITERAL(12, 242, 26), // "on_buttonLineColor_clicked"
-QT_MOC_LITERAL(13, 269, 23), // "on_buttonCircle_clicked"
-QT_MOC_LITERAL(14, 293, 24), // "on_buttonEllipse_clicked"
-QT_MOC_LITERAL(15, 318, 22), // "on_buttonFancy_clicked"
-QT_MOC_LITERAL(16, 341, 25), // "on_buttonStarfish_clicked"
-QT_MOC_LITERAL(17, 367, 22), // "on_buttonCloud_clicked"
-QT_MOC_LITERAL(18, 390, 23) // "on_buttonCloud2_clicked"
+QT_MOC_LITERAL(3, 37, 24), // "on_buttonHuygens_clicked"
+QT_MOC_LITERAL(4, 62, 21), // "on_buttonLine_clicked"
+QT_MOC_LITERAL(5, 84, 25), // "on_spinScale_valueChanged"
+QT_MOC_LITERAL(6, 110, 4), // "arg1"
+QT_MOC_LITERAL(7, 115, 28), // "on_spinInterval_valueChanged"
+QT_MOC_LITERAL(8, 144, 25), // "on_spinCount_valueChanged"
+QT_MOC_LITERAL(9, 170, 27), // "on_buttonBackground_clicked"
+QT_MOC_LITERAL(10, 198, 26), // "on_buttonLineColor_clicked"
+QT_MOC_LITERAL(11, 225, 23), // "on_buttonCircle_clicked"
+QT_MOC_LITERAL(12, 249, 24), // "on_buttonEllipse_clicked"
+QT_MOC_LITERAL(13, 274, 22), // "on_buttonFancy_clicked"
+QT_MOC_LITERAL(14, 297, 25), // "on_buttonStarfish_clicked"
+QT_MOC_LITERAL(15, 323, 22), // "on_buttonCloud_clicked"
+QT_MOC_LITERAL(16, 346, 23), // "on_buttonCloud2_clicked"
+QT_MOC_LITERAL(17, 370, 24), // "on_buttonCycloid_clicked"
+QT_MOC_LITERAL(18, 395, 21) // "on_buttonHypo_clicked"
 
     },
     "MainWindow\0on_buttonAstroid_clicked\0"
-    "\0on_buttonCyc_clicked\0on_buttonHuygens_clicked\0"
-    "on_buttonHyCyc_clicked\0on_buttonLine_clicked\0"
-    "on_spinScale_valueChanged\0arg1\0"
-    "on_spinInterval_valueChanged\0"
+    "\0on_buttonHuygens_clicked\0"
+    "on_buttonLine_clicked\0on_spinScale_valueChanged\0"
+    "arg1\0on_spinInterval_valueChanged\0"
     "on_spinCount_valueChanged\0"
     "on_buttonBackground_clicked\0"
     "on_buttonLineColor_clicked\0"
     "on_buttonCircle_clicked\0"
     "on_buttonEllipse_clicked\0"
     "on_buttonFancy_clicked\0on_buttonStarfish_clicked\0"
-    "on_buttonCloud_clicked\0on_buttonCloud2_clicked"
+    "on_buttonCloud_clicked\0on_buttonCloud2_clicked\0"
+    "on_buttonCycloid_clicked\0on_buttonHypo_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -84,11 +84,11 @@ static const uint qt_meta_data_MainWindow[] = {
        1,    0,   94,    2, 0x08 /* Private */,
        3,    0,   95,    2, 0x08 /* Private */,
        4,    0,   96,    2, 0x08 /* Private */,
-       5,    0,   97,    2, 0x08 /* Private */,
-       6,    0,   98,    2, 0x08 /* Private */,
-       7,    1,   99,    2, 0x08 /* Private */,
-       9,    1,  102,    2, 0x08 /* Private */,
-      10,    1,  105,    2, 0x08 /* Private */,
+       5,    1,   97,    2, 0x08 /* Private */,
+       7,    1,  100,    2, 0x08 /* Private */,
+       8,    1,  103,    2, 0x08 /* Private */,
+       9,    0,  106,    2, 0x08 /* Private */,
+      10,    0,  107,    2, 0x08 /* Private */,
       11,    0,  108,    2, 0x08 /* Private */,
       12,    0,  109,    2, 0x08 /* Private */,
       13,    0,  110,    2, 0x08 /* Private */,
@@ -102,11 +102,11 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Double,    6,
+    QMetaType::Void, QMetaType::Double,    6,
+    QMetaType::Void, QMetaType::Int,    6,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Double,    8,
-    QMetaType::Void, QMetaType::Double,    8,
-    QMetaType::Void, QMetaType::Int,    8,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -126,21 +126,21 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_buttonAstroid_clicked(); break;
-        case 1: _t->on_buttonCyc_clicked(); break;
-        case 2: _t->on_buttonHuygens_clicked(); break;
-        case 3: _t->on_buttonHyCyc_clicked(); break;
-        case 4: _t->on_buttonLine_clicked(); break;
-        case 5: _t->on_spinScale_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 6: _t->on_spinInterval_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 7: _t->on_spinCount_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 8: _t->on_buttonBackground_clicked(); break;
-        case 9: _t->on_buttonLineColor_clicked(); break;
-        case 10: _t->on_buttonCircle_clicked(); break;
-        case 11: _t->on_buttonEllipse_clicked(); break;
-        case 12: _t->on_buttonFancy_clicked(); break;
-        case 13: _t->on_buttonStarfish_clicked(); break;
-        case 14: _t->on_buttonCloud_clicked(); break;
-        case 15: _t->on_buttonCloud2_clicked(); break;
+        case 1: _t->on_buttonHuygens_clicked(); break;
+        case 2: _t->on_buttonLine_clicked(); break;
+        case 3: _t->on_spinScale_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 4: _t->on_spinInterval_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 5: _t->on_spinCount_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->on_buttonBackground_clicked(); break;
+        case 7: _t->on_buttonLineColor_clicked(); break;
+        case 8: _t->on_buttonCircle_clicked(); break;
+        case 9: _t->on_buttonEllipse_clicked(); break;
+        case 10: _t->on_buttonFancy_clicked(); break;
+        case 11: _t->on_buttonStarfish_clicked(); break;
+        case 12: _t->on_buttonCloud_clicked(); break;
+        case 13: _t->on_buttonCloud2_clicked(); break;
+        case 14: _t->on_buttonCycloid_clicked(); break;
+        case 15: _t->on_buttonHypo_clicked(); break;
         default: ;
         }
     }
