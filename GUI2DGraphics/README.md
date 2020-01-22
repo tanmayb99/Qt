@@ -1,1 +1,1 @@
-Building a 2D GUI App for various geometric shapes in a robust and scalable manner.
+Building a 2D GUI App for drawing various geometric shapes computed using equations.
