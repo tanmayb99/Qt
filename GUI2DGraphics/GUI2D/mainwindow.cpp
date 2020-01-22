@@ -92,14 +92,14 @@ void MainWindow::on_buttonStarfish_clicked()
 
 void MainWindow::on_buttonCloud_clicked()
 {
-    this->ui->renderArea->setShape(RenderArea::Cloud1);
+    this->ui->renderArea->setShape(RenderArea::CloudA);
     this->ui->renderArea->repaint();
     update_ui ();
 }
 
 void MainWindow::on_buttonCloud2_clicked()
 {
-    this->ui->renderArea->setShape(RenderArea::Cloud2);
+    this->ui->renderArea->setShape(RenderArea::CloudB);
     this->ui->renderArea->repaint();
     update_ui ();
 }

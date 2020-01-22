@@ -24,8 +24,8 @@ public:
         Ellipse,
         Fancy,
         Starfish,
-        Cloud1,
-        Cloud2
+        CloudA,
+        CloudB
     };
 
     void setBackgroundColor(QColor color) {mBackgroundColor = color; } // setter
@@ -67,18 +67,18 @@ private:
     void on_shape_changed();
 
     QPointF compute(float t); // dispatch function based on mShape's type
-    QPointF compute_astroid (float t);
-    QPointF compute_cycloid (float t);
-    QPointF compute_huygens (float t);
-    QPointF compute_hypoCycloid (float t);
-    QPointF compute_line (float t);
-    QPointF compute_circle(float t);
-    QPointF compute_ellipse(float t);
-    QPointF compute_fancy(float t);
-    QPointF compute_starfish(float t);
-    QPointF compute_cloud1 (float t);
-    QPointF compute_cloud2 (float t);
-    QPointF compute_cloud_with_sign (float t, float sign);
+    QPointF computing_astroid (float t);
+    QPointF computing_cycloid (float t);
+    QPointF computing_huygens (float t);
+    QPointF computing_hypoCycloid (float t);
+    QPointF computing_line (float t);
+    QPointF computing_circle(float t);
+    QPointF computing_ellipse(float t);
+    QPointF computing_fancy(float t);
+    QPointF computing_starfish(float t);
+    QPointF computing_cloudA (float t);
+    QPointF compute_cloudB (float t);
+    QPointF computing_cloud_with_sign (float t, float sign);
 };
 
 #endif // RENDERAREA_H

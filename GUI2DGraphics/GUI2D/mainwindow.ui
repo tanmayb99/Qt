@@ -121,14 +121,14 @@
       <item>
        <widget class="QPushButton" name="buttonCloud">
         <property name="text">
-         <string>Cloud 1</string>
+         <string>Cloud A</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="buttonCloud2">
         <property name="text">
-         <string>Cloud 2</string>
+         <string>Cloud B</string>
         </property>
        </widget>
       </item>

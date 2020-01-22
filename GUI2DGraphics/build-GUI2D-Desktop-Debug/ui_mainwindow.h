@@ -251,8 +251,8 @@ public:
         buttonEllipse->setText(QApplication::translate("MainWindow", "Ellipse", Q_NULLPTR));
         buttonFancy->setText(QApplication::translate("MainWindow", "Fancy", Q_NULLPTR));
         buttonStarfish->setText(QApplication::translate("MainWindow", "Starfish", Q_NULLPTR));
-        buttonCloud->setText(QApplication::translate("MainWindow", "Cloud 1", Q_NULLPTR));
-        buttonCloud2->setText(QApplication::translate("MainWindow", "Cloud 2", Q_NULLPTR));
+        buttonCloud->setText(QApplication::translate("MainWindow", "Cloud A", Q_NULLPTR));
+        buttonCloud2->setText(QApplication::translate("MainWindow", "Cloud B", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "Scale:", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "Interval Length:", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainWindow", "Step Count:", Q_NULLPTR));
